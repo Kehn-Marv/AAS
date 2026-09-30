@@ -1,6 +1,6 @@
 name = "aas-anatomic-agentic-system"
-compatibility_date = "2024-02-23"
-compatibility_flags = ["nodejs_compat"]
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat_v2"]
 main = "worker/index.ts"
 
 [build]
