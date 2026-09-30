@@ -37,11 +37,11 @@
 
 html[data-theme="light"] {
   color-scheme: light;
-  --bg: #eef3f0;
-  --surface: #f8faf7;
-  --surface-2: #ffffff;
-  --surface-3: #e7efeb;
-  --panel: #f8faf7;
+  --bg: #FDFBF7;
+  --surface: #F4F2EC;
+  --surface-2: #FCFAF5;
+  --surface-3: #EBE7DF;
+  --panel: #FDFBF7;
   --line: rgba(40, 74, 72, 0.14);
   --line-strong: rgba(35, 92, 88, 0.25);
   --text: #132421;
