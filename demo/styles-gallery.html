@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 Education Styles — Style Gallery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Archivo:ital,wght@0,400;0,500;0,800;0,900;1,400&family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   5 EDUCATION STYLES — Five style interpretations of the same Heart lesson
+   01 Playful Gamified (Duolingo)   02 Swiss Editorial (Stripe Press family)
+   03 Neubrutalism                  04 Dev Terminal (Three.js Journey family)
+   05 Soft Docs (Khan/Notion family)
+   ========================================================================== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: "Inter", sans-serif; background: #111; }
+button { font: inherit; cursor: pointer; border: 0; }
+
+/* ---------- Top navigation ---------- */
+.gallery-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; gap: 4px;
+  padding: 10px 16px;
+  background: rgba(10, 10, 10, 0.88);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  font-family: "IBM Plex Mono", monospace;
+}
+.gallery-nav .logo { color: #fff; font-size: 12px; letter-spacing: 0.1em; margin-right: 14px; }
+.gallery-nav a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 11.5px;
+  padding: 7px 12px;
+  border-radius: 99px;
+  transition: all 150ms;
+  white-space: nowrap;
+}
+.gallery-nav a:hover { color: #fff; background: rgba(255, 255, 255, 0.12); }
+.gallery-nav .spacer { flex: 1; }
+.gallery-nav .hint { color: rgba(255, 255, 255, 0.4); font-size: 10.5px; }
+
+.slide { min-height: 100vh; padding: 76px 24px 40px; display: flex; flex-direction: column; }
+
+/* Style plaque */
+.plaque {
+  align-self: flex-start;
+  display: flex; align-items: center; gap: 10px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+  padding: 6px 14px;
+  border: 1px solid currentColor;
+  margin-bottom: 22px;
+}
+
+.stage {
+  flex: 1;
+  display: grid; place-items: center;
+}
+
+/* ==========================================================================
+   01 · PLAYFUL GAMIFIED — Duolingo sticker game style
+   White canvas / bold rounded type / 2px stroke + thick bottom / green=correct, blue=interactive
+   ========================================================================== */
+.st-duo {
+  background: #ffffff;
+  color: #3c3c3c;
+  font-family: "Nunito", sans-serif;
+}
+.st-duo .plaque { color: #58a700; border-radius: 99px; }
+.duo-wrap { width: min(680px, 100%); display: grid; gap: 18px; }
+
+.duo-topbar { display: flex; align-items: center; gap: 14px; }
+.duo-progress {
+  flex: 1; height: 16px;
+  background: #e5e5e5; border-radius: 99px;
+  overflow: hidden;
+}
+.duo-progress span {
+  display: block; height: 100%; width: 62%;
+  background: #58cc02; border-radius: 99px;
+  position: relative;
+}
+.duo-progress span::after {
+  content: ""; position: absolute; left: 8px; right: 8px; top: 3px; height: 4px;
+  background: rgba(255,255,255,0.35); border-radius: 99px;
+}
+.duo-stat { font-weight: 900; font-size: 15px; display: flex; align-items: center; gap: 5px; }
+.duo-stat.fire { color: #ff9600; }
+.duo-stat.gem { color: #1cb0f6; }
+
+.duo-hero { display: flex; align-items: center; gap: 18px; }
+.duo-mascot {
+  width: 92px; height: 92px; flex: 0 0 auto;
+  display: grid; place-items: center;
+  font-size: 48px;
+  background: #ddf4ff;
+  border: 2px solid #84d8ff;
+  border-radius: 24px;
+}
+.duo-bubble {
+  position: relative;
+  background: #fff;
+  border: 2px solid #e5e5e5;
+  border-radius: 18px;
+  padding: 14px 18px;
+  font-weight: 800; font-size: 17px;
+}
+.duo-bubble::before {
+  content: ""; position: absolute; left: -11px; top: 50%;
+  width: 18px; height: 18px;
+  background: #fff;
+  border-left: 2px solid #e5e5e5;
+  border-bottom: 2px solid #e5e5e5;
+  transform: translateY(-50%) rotate(45deg);
+}
+.duo-bubble small { display: block; color: #afafaf; font-size: 12.5px; margin-top: 3px; font-weight: 700; }
+
+.duo-card {
+  display: flex; align-items: center; gap: 14px;
+  background: #fff;
+  border: 2px solid #e5e5e5;
+  border-bottom-width: 5px;
+  border-radius: 18px;
+  padding: 14px 16px;
+  text-align: left;
+  transition: background 120ms;
+  width: 100%;
+}
+.duo-card:hover { background: #f7f7f7; }
+.duo-card .ico {
+  width: 46px; height: 46px; border-radius: 14px;
+  display: grid; place-items: center; font-size: 22px;
+  background: #f0f0f0;
+}
+.duo-card .txt { flex: 1; }
+.duo-card .txt b { display: block; font-size: 15.5px; font-weight: 900; }
+.duo-card .txt span { color: #afafaf; font-size: 12.5px; font-weight: 700; }
+.duo-card .state { font-size: 20px; }
+.duo-card.done .ico { background: #ddf4d0; }
+.duo-card.locked { opacity: 0.45; }
+
+.duo-cta {
+  background: #58cc02;
+  color: #fff;
+  font-weight: 900; font-size: 16px; letter-spacing: 0.06em;
+  padding: 15px;
+  border-radius: 16px;
+  box-shadow: 0 5px 0 #46a302;
+  transition: transform 80ms, box-shadow 80ms;
+  text-transform: uppercase;
+}
+.duo-cta:hover { filter: brightness(1.05); }
+.duo-cta:active { transform: translateY(5px); box-shadow: 0 0 0 #46a302; }
+.duo-ghost-btn {
+  background: none; color: #1cb0f6;
+  font-weight: 900; font-size: 14px; letter-spacing: 0.06em;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   02 · SWISS EDITORIAL — Swiss International Editorial
+   Strict grid / large sans-serif / single red / numbering system
+   ========================================================================== */
+.st-swiss {
+  background: #f4f4f0;
+  color: #111111;
+  font-family: "Archivo", "Inter", sans-serif;
+  position: relative;
+}
+.st-swiss .plaque { color: #e30613; }
+.st-swiss::before { /* Grid lines */
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px) left/25% 100% no-repeat,
+    repeating-linear-gradient(90deg, transparent 0 calc(25% - 1px), rgba(0,0,0,0.06) calc(25% - 1px) 25%);
+  pointer-events: none;
+}
+.swiss-wrap { width: min(1060px, 100%); position: relative; }
+
+.swiss-meta {
+  display: flex; justify-content: space-between;
+  border-top: 3px solid #111;
+  padding-top: 10px;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase;
+}
+.swiss-meta .red { color: #e30613; }
+
+.swiss-title {
+  font-size: clamp(56px, 9vw, 128px);
+  font-weight: 900;
+  line-height: 0.94;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin: 26px 0 8px;
+}
+.swiss-title .zh { font-family: "Archivo", sans-serif; }
+.swiss-title em { font-style: normal; color: #e30613; }
+
+.swiss-sub {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  border-top: 1px solid #111;
+  padding-top: 18px;
+  margin-top: 18px;
+}
+.swiss-sub h4 {
+  font-size: 11px; font-weight: 800;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.swiss-sub h4::before { content: "■"; color: #e30613; margin-right: 7px; font-size: 8px; }
+.swiss-sub p { font-size: 13.5px; line-height: 1.65; color: #333; }
+.swiss-sub .num { font-size: 34px; font-weight: 900; line-height: 1; display: block; margin-bottom: 8px; }
+
+.swiss-actions { display: flex; gap: 0; margin-top: 30px; border: 2px solid #111; width: max-content; }
+.swiss-actions button {
+  padding: 16px 30px;
+  font-size: 13px; font-weight: 800;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  background: #f4f4f0; color: #111;
+  transition: all 120ms;
+}
+.swiss-actions button.primary { background: #e30613; color: #fff; }
+.swiss-actions button:not(.primary):hover { background: #111; color: #f4f4f0; }
+
+.swiss-index {
+  position: absolute; right: 0; top: -8px;
+  font-size: clamp(90px, 14vw, 190px);
+  font-weight: 900; line-height: 0.8;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(0, 0, 0, 0.18);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   03 · NEUBRUTALISM — Neubrutalism
+   Acid colors / 3px black border / hard shadow / sticker tilt
+   ========================================================================== */
+.st-brutal {
+  background: #ffe14d;
+  color: #000;
+  font-family: "Space Grotesk", "IBM Plex Mono", sans-serif;
+}
+.st-brutal .plaque { color: #000; background: #fff; font-weight: 600; }
+.brutal-wrap { width: min(880px, 100%); display: grid; gap: 22px; position: relative; }
+
+.brutal-badge {
+  position: absolute; right: -6px; top: -34px;
+  background: #ff5d8f;
+  border: 3px solid #000;
+  padding: 10px 18px;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 600; font-size: 13px;
+  transform: rotate(6deg);
+  box-shadow: 5px 5px 0 #000;
+  z-index: 2;
+}
+
+.brutal-title {
+  font-size: clamp(44px, 6.5vw, 84px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+.brutal-title mark {
+  background: #000; color: #ffe14d;
+  padding: 0 14px;
+  display: inline-block;
+  transform: rotate(-1.5deg);
+}
+
+.brutal-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 22px; }
+.brutal-card {
+  background: #fff;
+  border: 3px solid #000;
+  box-shadow: 8px 8px 0 #000;
+  padding: 22px;
+}
+.brutal-card h3 {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  border-bottom: 3px solid #000;
+  padding-bottom: 10px; margin-bottom: 14px;
+  display: flex; justify-content: space-between;
+}
+.brutal-card p { font-size: 14.5px; line-height: 1.6; font-weight: 500; }
+.brutal-card .heart { font-size: 64px; text-align: center; padding: 12px 0; }
+
+.brutal-facts { display: grid; gap: 10px; }
+.brutal-fact {
+  display: flex; justify-content: space-between; align-items: center;
+  border: 3px solid #000;
+  padding: 11px 16px;
+  font-weight: 700; font-size: 14px;
+  background: #fff;
+  box-shadow: 5px 5px 0 #000;
+  transition: transform 100ms, box-shadow 100ms;
+}
+.brutal-fact:hover { transform: translate(2px, 2px); box-shadow: 3px 3px 0 #000; }
+.brutal-fact:nth-child(1) { background: #a8e6ff; }
+.brutal-fact:nth-child(2) { background: #ffb3c7; }
+.brutal-fact:nth-child(3) { background: #c9f2c2; }
+.brutal-fact span { font-family: "IBM Plex Mono", monospace; font-size: 12px; }
+
+.brutal-actions { display: flex; gap: 18px; flex-wrap: wrap; }
+.brutal-btn {
+  border: 3px solid #000;
+  background: #000; color: #ffe14d;
+  padding: 16px 30px;
+  font-size: 16px; font-weight: 700;
+  box-shadow: 7px 7px 0 rgba(0, 0, 0, 0.35);
+  transition: transform 100ms, box-shadow 100ms;
+}
+.brutal-btn.alt { background: #fff; color: #000; box-shadow: 7px 7px 0 #000; }
+.brutal-btn:hover { transform: translate(3px, 3px); box-shadow: 3px 3px 0 #000; }
+
+/* ==========================================================================
+   04 · DEV TERMINAL — Dark geek terminal style
+   Terminal window / all monospace / neon green-purple / command-line narrative
+   ========================================================================== */
+.st-term {
+  background: #0a0e0a;
+  color: #c9f7c9;
+  font-family: "IBM Plex Mono", monospace;
+  position: relative;
+}
+.st-term::after { /* scanlines */
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: repeating-linear-gradient(0deg, rgba(0,0,0,0.16) 0 1px, transparent 1px 3px);
+}
+.st-term .plaque { color: #39ff88; border-radius: 3px; }
+.term-window {
+  width: min(860px, 100%);
+  background: #0d120d;
+  border: 1px solid #234823;
+  border-radius: 10px;
+  box-shadow: 0 30px 90px rgba(57, 255, 136, 0.09), 0 10px 30px rgba(0,0,0,0.6);
+  overflow: hidden;
+  position: relative; z-index: 1;
+}
+.term-titlebar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 11px 14px;
+  background: #111a11;
+  border-bottom: 1px solid #234823;
+}
+.term-titlebar i { width: 11px; height: 11px; border-radius: 50%; }
+.term-titlebar i:nth-child(1) { background: #ff5f57; }
+.term-titlebar i:nth-child(2) { background: #febc2e; }
+.term-titlebar i:nth-child(3) { background: #28c840; }
+.term-titlebar span { margin-left: 10px; color: #4f7a4f; font-size: 11.5px; }
+
+.term-body { padding: 22px 24px 26px; font-size: 13.5px; line-height: 1.9; }
+.term-body .p { color: #39ff88; }
+.term-body .cmd { color: #e6ffe6; font-weight: 600; }
+.term-body .flag { color: #b98cff; }
+.term-body .comment { color: #4f7a4f; }
+.term-body .out { color: #9fd89f; }
+.term-body .heart-art { color: #ff6b8a; }
+.term-kv { display: inline-block; min-width: 118px; color: #5f9f8f; }
+.term-body .val { color: #ffe9a8; }
+
+.term-cursor {
+  display: inline-block; width: 9px; height: 17px;
+  background: #39ff88;
+  vertical-align: text-bottom;
+  animation: blink 1.1s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+.term-tags { display: flex; gap: 8px; margin: 14px 0 4px; flex-wrap: wrap; }
+.term-tags span {
+  border: 1px solid #2c5c2c;
+  color: #6fce6f;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 3px;
+}
+.term-run {
+  margin-top: 18px;
+  background: #39ff88; color: #061206;
+  font-weight: 600; font-size: 13px;
+  padding: 12px 22px;
+  border-radius: 5px;
+  box-shadow: 0 0 24px rgba(57, 255, 136, 0.35);
+  transition: all 150ms;
+}
+.term-run:hover { box-shadow: 0 0 40px rgba(57, 255, 136, 0.6); }
+.term-run-alt {
+  margin-left: 10px;
+  background: none; color: #b98cff;
+  border: 1px solid #b98cff;
+  font-size: 13px; padding: 12px 22px; border-radius: 5px;
+  transition: all 150ms;
+}
+.term-run-alt:hover { background: rgba(185, 140, 255, 0.12); }
+
+/* ==========================================================================
+   05 · SOFT DOCS — Soft docs style
+   Cream paper feel / pastel cards / rounded soft shadows / annotation blocks
+   ========================================================================== */
+.st-docs {
+  background: #f7f5f0;
+  color: #37352f;
+  font-family: "Inter", sans-serif;
+}
+.st-docs .plaque { color: #4f6ef7; border-radius: 99px; }
+.docs-wrap { width: min(760px, 100%); display: grid; gap: 16px; }
+
+.docs-crumb { font-size: 13px; color: #9b9a97; }
+.docs-crumb b { color: #37352f; font-weight: 600; }
+
+.docs-title { display: flex; align-items: center; gap: 14px; }
+.docs-title .emoji {
+  width: 62px; height: 62px;
+  display: grid; place-items: center;
+  font-size: 32px;
+  background: #ffe4e0;
+  border-radius: 14px;
+}
+.docs-title h1 { font-size: 34px; font-weight: 700; letter-spacing: -0.02em; }
+.docs-title p { color: #9b9a97; font-size: 13.5px; margin-top: 3px; }
+
+.docs-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.docs-chips span {
+  font-size: 12.5px; font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 99px;
+}
+.docs-chips .c1 { background: #e3e9fd; color: #4f6ef7; }
+.docs-chips .c2 { background: #dbf3e5; color: #1f9d62; }
+.docs-chips .c3 { background: #fdeeda; color: #c27803; }
+
+.docs-card {
+  background: #fff;
+  border: 1px solid #eceae4;
+  border-radius: 16px;
+  padding: 22px 24px;
+  box-shadow: 0 2px 12px rgba(60, 55, 40, 0.05);
+}
+.docs-card h3 { font-size: 15px; font-weight: 650; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.docs-card p { font-size: 14px; line-height: 1.75; color: #5b5a56; }
+
+.docs-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.docs-fact {
+  background: #fbfaf7;
+  border: 1px solid #f0eee8;
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+.docs-fact b { display: block; font-size: 18px; font-weight: 700; color: #37352f; }
+.docs-fact span { font-size: 12px; color: #9b9a97; }
+
+.docs-callout {
+  display: flex; gap: 12px;
+  background: #eef3fe;
+  border-radius: 12px;
+  padding: 15px 18px;
+  font-size: 13.5px; line-height: 1.65;
+  color: #3d4f7d;
+}
+.docs-callout .ic { flex: 0 0 auto; }
+
+.docs-progress-row { display: flex; align-items: center; gap: 14px; }
+.docs-progress-row .bar { flex: 1; height: 8px; background: #efede7; border-radius: 99px; overflow: hidden; }
+.docs-progress-row .bar span { display: block; height: 100%; width: 46%; background: linear-gradient(90deg, #7b9bff, #4f6ef7); border-radius: 99px; }
+.docs-progress-row small { color: #9b9a97; font-size: 12.5px; white-space: nowrap; }
+
+.docs-actions { display: flex; gap: 10px; }
+.docs-btn {
+  background: #4f6ef7; color: #fff;
+  font-size: 14px; font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(79, 110, 247, 0.3);
+  transition: all 150ms;
+}
+.docs-btn:hover { background: #3f5de6; transform: translateY(-1px); }
+.docs-btn.alt {
+  background: #fff; color: #37352f;
+  border: 1px solid #e3e1da;
+  box-shadow: none;
+}
+.docs-btn.alt:hover { background: #f7f6f2; }
+
+/* ---------- Section divider ---------- */
+.slide-sep {
+  padding: 34px 24px 10px;
+  font-family: "IBM Plex Mono", monospace;
+  color: rgba(255,255,255,0.5);
+  font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+  background: #111;
+}
+
+@media (max-width: 760px) {
+  .brutal-grid { grid-template-columns: 1fr; }
+  .swiss-sub { grid-template-columns: 1fr; }
+  .docs-facts { grid-template-columns: 1fr; }
+  .gallery-nav a { padding: 6px 8px; font-size: 10px; }
+  .gallery-nav .hint { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+</style>
+</head>
+<body>
+
+<nav class="gallery-nav">
+  <span class="logo">STYLE ×5</span>
+  <a href="#s1">01 Gamified</a>
+  <a href="#s2">02 Swiss Editorial</a>
+  <a href="#s3">03 Brutalism</a>
+  <a href="#s4">04 Terminal</a>
+  <a href="#s5">05 Soft Docs</a>
+  <span class="spacer"></span>
+  <span class="hint">Same lesson content across five styles</span>
+</nav>
+
+<!-- ============ 01 PLAYFUL GAMIFIED ============ -->
+<section class="slide st-duo" id="s1">
+  <div class="plaque">Style 01 — Playful Gamified · Inspired by Duolingo</div>
+  <div class="stage">
+    <div class="duo-wrap">
+      <div class="duo-topbar">
+        <div class="duo-progress"><span></span></div>
+        <span class="duo-stat fire">🔥 5</span>
+        <span class="duo-stat gem">💎 320</span>
+      </div>
+      <div class="duo-hero">
+        <div class="duo-mascot">🫀</div>
+        <div class="duo-bubble">
+          Lesson 1: Meet the Heart!
+          <small>LESSON 1: THE HEART — Complete for 20 XP</small>
+        </div>
+      </div>
+      <button class="duo-card done">
+        <span class="ico">📖</span>
+        <span class="txt"><b>Where is the heart?</b><span>Center of the thorax, between the lungs, about fist-sized</span></span>
+        <span class="state">✅</span>
+      </button>
+      <button class="duo-card done">
+        <span class="ico">🧩</span>
+        <span class="txt"><b>Four chambers</b><span>Two atria and two ventricles, each in place</span></span>
+        <span class="state">✅</span>
+      </button>
+      <button class="duo-card">
+        <span class="ico">⚡</span>
+        <span class="txt"><b>Pumping challenge</b><span>7,500 liters per day — can you believe it?</span></span>
+        <span class="state">⭐</span>
+      </button>
+      <button class="duo-card locked">
+        <span class="ico">🏆</span>
+        <span class="txt"><b>Ultimate quiz</b><span>Complete the previous stages first</span></span>
+        <span class="state">🔒</span>
+      </button>
+      <button class="duo-cta">Continue learning +20 XP</button>
+      <button class="duo-ghost-btn">Review first →</button>
+    </div>
+  </div>
+</section>
+
+<div class="slide-sep">Style 02 — Swiss Editorial ↓</div>
+
+<!-- ============ 02 SWISS EDITORIAL ============ -->
+<section class="slide st-swiss" id="s2">
+  <div class="plaque">Style 02 — Swiss Editorial · Inspired by Stripe Press / Swiss poster design</div>
+  <div class="stage">
+    <div class="swiss-wrap">
+      <div class="swiss-index">01</div>
+      <div class="swiss-meta">
+        <span>Anatomie — Lektion 01</span>
+        <span class="red">Zirkulationssystem</span>
+        <span>Zürich · MMXXVI</span>
+      </div>
+      <h1 class="swiss-title">
+        Das<br>Herz<em>.</em><br>
+        <span class="zh">Heart</span>
+      </h1>
+      <div class="swiss-sub">
+        <div>
+          <h4>Definition</h4>
+          <p>A muscular pump in the circulatory system, located in the center of the thorax, enclosed by the pericardium, driving blood flow throughout the body day and night.</p>
+        </div>
+        <div>
+          <h4>Daten</h4>
+          <span class="num">7,500 L</span>
+          <p>Daily blood output; approximately 100,000 beats, weighing 250 to 350 g.</p>
+        </div>
+        <div>
+          <h4>Struktur</h4>
+          <span class="num">4</span>
+          <p>Chambers: left atrium, left ventricle, right atrium, right ventricle; four valve sets ensure unidirectional flow.</p>
+        </div>
+      </div>
+      <div class="swiss-actions">
+        <button class="primary">Start learning →</button>
+        <button>View atlas</button>
+        <button>Source: CC BY 4.0</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="slide-sep">Style 03 — Neubrutalism ↓</div>
+
+<!-- ============ 03 NEUBRUTALISM ============ -->
+<section class="slide st-brutal" id="s3">
+  <div class="plaque">Style 03 — Neubrutalism · Inspired by neubrutalism.com</div>
+  <div class="stage">
+    <div class="brutal-wrap">
+      <div class="brutal-badge">★ NEW LESSON!</div>
+      <h1 class="brutal-title">
+        Your <mark>Heart</mark>,<br>
+        pumps 7,500 liters of blood a day.
+      </h1>
+      <div class="brutal-grid">
+        <div class="brutal-card">
+          <h3>LESSON_01.TXT <span>●●●○</span></h3>
+          <div class="heart">🫀</div>
+          <p>Only the size of your fist, yet the hardest-working muscle in the body. Four chambers share the work: the right side collects deoxygenated blood and sends it to the lungs; the left side pumps oxygenated blood throughout the body. Valves are one-way gates.</p>
+        </div>
+        <div class="brutal-facts">
+          <div class="brutal-fact">Weight <span>250–350 g</span></div>
+          <div class="brutal-fact">Daily beats <span>≈ 100,000 beats</span></div>
+          <div class="brutal-fact">Chambers <span>2 atria + 2 ventricles</span></div>
+          <div class="brutal-fact">Rest <span>Never ❌</span></div>
+          <div class="brutal-card" style="box-shadow:5px 5px 0 #000;padding:14px 16px;">
+            <p style="font-family:'IBM Plex Mono',monospace;font-size:12px;">QUIZ.EXE ready — 5 questions, prove you understood.</p>
+          </div>
+        </div>
+      </div>
+      <div class="brutal-actions">
+        <button class="brutal-btn">Start quiz →</button>
+        <button class="brutal-btn alt">View 3D model</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="slide-sep">Style 04 — Dev Terminal ↓</div>
+
+<!-- ============ 04 DEV TERMINAL ============ -->
+<section class="slide st-term" id="s4">
+  <div class="plaque">Style 04 — Dev Terminal · Inspired by Three.js Journey</div>
+  <div class="stage">
+    <div class="term-window">
+      <div class="term-titlebar">
+        <i></i><i></i><i></i>
+        <span>atelier — anatomy@2.1.0 — zsh</span>
+      </div>
+      <div class="term-body">
+        <div><span class="p">➜ ~/atelier</span> <span class="cmd">npx learn anatomy</span> <span class="flag">--lesson=heart --lang=zh</span></div>
+        <div class="comment"># Loading lesson module…</div>
+        <div class="out">✔ Model loaded <span class="val">heart.glb</span> (HRA · CC BY 4.0)</div>
+        <div class="out">✔ Content ready <span class="val">en</span></div>
+        <br>
+        <div><span class="heart-art">🫀</span> <span class="cmd">LESSON 01 — Heart / The Heart</span></div>
+        <div><span class="term-kv">weight:</span> <span class="val">"250–350 g"</span></div>
+        <div><span class="term-kv">chambers:</span> <span class="val">["LA","LV","RA","RV"]</span></div>
+        <div><span class="term-kv">daily_output:</span> <span class="val">"≈ 7,500 L"</span></div>
+        <div><span class="term-kv">beats_per_day:</span> <span class="val">100_000</span></div>
+        <div class="term-tags">
+          <span>#Cardiovascular</span><span>#3D-model</span><span>#English</span><span>#quiz×5</span>
+        </div>
+        <br>
+        <div><span class="p">➜ ~/atelier</span> <span class="term-cursor"></span></div>
+        <button class="term-run">▶ Start this lesson</button>
+        <button class="term-run-alt">quiz --start</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="slide-sep">Style 05 — Soft Docs ↓</div>
+
+<!-- ============ 05 SOFT DOCS ============ -->
+<section class="slide st-docs" id="s5">
+  <div class="plaque">Style 05 — Soft Docs · Inspired by Khan Academy / Notion</div>
+  <div class="stage">
+    <div class="docs-wrap">
+      <div class="docs-crumb">Anatomy / Cardiovascular / <b>Lesson 1: Heart</b></div>
+      <div class="docs-title">
+        <span class="emoji">🫀</span>
+        <div>
+          <h1>Meet Your Heart</h1>
+          <p>About 8 minutes · Beginner friendly</p>
+        </div>
+      </div>
+      <div class="docs-chips">
+        <span class="c1">Cardiovascular</span>
+        <span class="c2">46% complete</span>
+        <span class="c3">Includes 3D model</span>
+      </div>
+      <div class="docs-card">
+        <h3>📌 What you will learn</h3>
+        <p>The heart is the muscular pump of the cardiovascular system, about the size of a fist. We will explore its four chambers, four sets of valves, and how it pumps roughly 7,500 liters of blood per day.</p>
+      </div>
+      <div class="docs-facts">
+        <div class="docs-fact"><b>250–350 g</b><span>Average weight</span></div>
+        <div class="docs-fact"><b>4</b><span>Chamber count</span></div>
+        <div class="docs-fact"><b>100,000</b><span>Daily beats</span></div>
+      </div>
+      <div class="docs-callout">
+        <span class="ic">💡</span>
+        <span>Tip: The left side represents your right side. Anatomical illustrations use an "facing the patient" perspective. Keep this in mind when viewing the 3D model.</span>
+      </div>
+      <div class="docs-progress-row">
+        <small>Learning progress</small>
+        <div class="bar"><span></span></div>
+        <small>6 / 13 课</small>
+      </div>
+      <div class="docs-actions">
+        <button class="docs-btn">继续学习</button>
+        <button class="docs-btn alt">收藏这lesson课 ☆</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
